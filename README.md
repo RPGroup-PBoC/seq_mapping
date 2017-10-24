@@ -1,4 +1,4 @@
-# Mapping sequence to binding energy
+# Mapping operator sequence to transcription factor binding energy
 
 This repository contains all experimental data and programs for the analysis found in "An Allosteric Theory of Transcription Factor Induction" by Stephanie Barnes, Nathan Belliveau, William Ireland, Justin Kinney, and Rob Phillips. 
 
