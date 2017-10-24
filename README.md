@@ -17,5 +17,5 @@ analyzing, and displaying the data presented in this work.
 ## `data`
 This folder contains all experimental data used in the publication.
 
-* **`microscopy_comments/` \|** All energy matrix models and associated 
+* **`models/` \|** All energy matrix models and associated 
     scaling factors used to map sequence to binding energy. 
