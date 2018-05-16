@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\braket}[1]{\left \langle #1 \right \rangle}
+\newcommand{\m}[1]{\braket{\epsilon^{#1}}}
+\newcommand{\kap}[1]{\kappa_{#1}}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Uniformly sampling dimensions in sequence space}
+\author{JBK}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section*{Sampling a single energy dimension}
+
+To sample sequences with a uniform distribution of energies, one can do normal MC with a sample probability of $1/\rho(\epsilon(s))$ where $\rho(E)$ is the density of states within $[E, E+dE]$. This can be well estimated using a saddle-point approximation. We start as follows: the number of states within $[E, E+dE]$ is given by
+\bea
+\rho(E) & = &  \sum_{s} \delta \left(E - \sum_{bj} \epsilon_{bj} s_{bj} \right) \\
+& = &  \int_{-\infty}^{\infty} \frac{d \omega}{2 \pi} \sum_{s} \exp \left( i \omega E - i \omega \sum_{bj} \epsilon_{bj} s_{bj} \right) \\
+& = & -i  \int_{- i \infty}^{i \infty} \frac{d \beta}{2 \pi} \prod_j \sum_b \exp \left( \beta E - \beta \epsilon_{bj} \right) \\
+& = & -i  \int_{- i \infty}^{i \infty} \frac{d \beta}{2 \pi} e^{-S_E(\beta)}, 
+\eea
+where
+\bea
+S_E (\beta) &=& - \beta E - \sum_j \log \left( \sum_b e^{- \beta \epsilon_{bj}} \right). 
+\eea
+We proceed with a saddle-point approximation by finding the extremum of $S_E(\beta)$. 
+\bea
+0 = \partial_{\beta} S_E &=& - E + \sum_j \frac{\sum_b \epsilon_{bj} e^{- \beta \epsilon_{bj}} }{\sum_b e^{-\beta \epsilon_{bj}} } = - E + \braket{\epsilon}_{\beta} \\
+\Rightarrow E(\beta)  &\equiv&  \braket{\epsilon}_{\beta} .
+\eea
+Here we've used $\braket{f(s)}_{\beta}$ to denote the expected value of a sequence-dependent function $s$ in the canonical distribution specified by energy $\epsilon(s)$ and inverse temperature $\beta$. Indeed, the extremum value for $\beta$ is simply the inverse temperature at which the expected value of $\epsilon(s)$ in the canonical ensemble is $E$.  Note that $\beta$ can be negative; this isn't a problem because the number of states is finite and have energies that are bounded above.
+
+As is typical with saddle-point approximations, $\beta$ is integrated from $-i \infty$ to $+ i \infty$. But the integrand exhibits no poles, so we can deform this path into the complex plane however we want. From the form of $E(\beta)$ we see that the minimum of $S_E (\beta)$ obtains at a real value for $\beta$. Significant contributions to the integral are most highly localized if the path we choose passes through this extremum in such a way that $S_E$ is minimized at this value for $\beta$. How we pass through this point is important, though, because $\beta$ is a saddle-point of $S_E$; holomorphic functions don't have internal minima. The function $E(\beta)$ can be numerically inverted to get $\beta(E)$, but keep in mind that the $E$-domain of this function is limited and depends strongly on the specific energy matrix $\epsilon_{bj}$: 
+
+Proceeding, with the calculation, the curvature of the saddle is given by
+\bea
+\partial^2_{\beta} S_E = - \partial_{\beta} \braket{\epsilon}_{\beta} = - \braket{(\delta \epsilon)^2}_{\beta}
+\eea
+From the last relation we see that this curvature is guaranteed negative, indicating a maximum for $S_E$ as one proceeds across $\beta(E)$ along the real $\beta$ axis. Accordingly, $S_E$ attains a minimum as one crosses the real axis perpendicularly at $\beta(E)$ -- making this the direction our path should take. This is typical of paths integrated over when dealing with Lagrange multipliers. [put figure here]. 
+
+So the saddle-point approximation is
+\bea
+\rho(E) &\approx &  -i  \int_{-\infty}^{\infty} \frac{i d\Delta}{2 \pi} e^{-S_E(\beta) - \frac{1}{2} | \partial^2_{\beta} S_{E}(\beta) | \Delta^2}  \\
+& = & e^{- S_E (\beta)} \left[ 2 \pi \left| \partial^2_{\beta} S_{E}(\beta) \right| \right]^{-1/2} \\
+& = & e^{\beta \braket{\epsilon}_{\beta} } Z_{\beta} \left[ 2 \pi \braket{(\delta \epsilon)^2} \right]^{-1/2}
+\eea
+where all $\beta = \beta(E)$ and $Z_{\beta} = \prod_j \sum_b e^{-\epsilon_{bj}}$ is the canonical partition function. A higher-order expansion can be carried out if desired.
+
+We should carry this expansion out to higher order. Let $s = S_E/L$,  evaluate all derivatives at $\beta^*$, and let $i \Delta = (\beta - \beta^*) / \sqrt{L}$. 
+\bea
+\rho(E) & = &  \sqrt{L} \int_{-\infty}^{\infty} \frac{d\Delta}{2 \pi} \exp \left[-L s + \frac{1}{2} s'' \Delta^2 + \frac{i}{3!\sqrt{L}} s''' \Delta^3 - \frac{1}{4! L} s'''' \Delta^4 + o(L^{-3/2} \Delta^5) \right] \\
+& \approx & \exp \left[  \frac{i}{3!\sqrt{L}} s''' \partial_J^3 - \frac{1}{4! L} s'''' \partial_J^4 \right] \sqrt{L} \int_{-\infty}^{\infty} \frac{d\Delta}{2 \pi} \exp \left[-L s - \frac{1}{2} |s''| \Delta^2 + J \Delta \right]_{J=0} \\
+& = &  \sqrt{\frac{L}{2 \pi |s''|}} e^{-Ls} \exp \left[  \frac{i}{3!\sqrt{L}} s^{(3)} \partial_J^3 - \frac{1}{4! L} s^{(4)} \partial_J^4 \right] \exp \left[- \frac{1}{2} |s''|^{-1} J^2 \right]_{J = 0} \\
+& = &  \sqrt{\frac{L}{2 \pi |s''|}}e^{-Ls} \left[1 + \frac{i s^{(3)} \partial_J^3}{3!\sqrt{L}}  - \frac{ s^{(4)} \partial_J^4}{4! L}  - \frac{[s^{(3)}]^2 \partial_J^6}{2(3!)^2 L} \right] \exp \left[- \frac{1}{2} |s''|^{-1} J^2 \right]_{J = 0} \\
+& = & \sqrt{\frac{L}{2 \pi |s''|}}e^{-Ls} \left[1 - \frac{1}{L} \left( \frac{ s^{(4)}}{24} |s''|^{-2} + \frac{[s^{(3)}]^2 }{72} |s''|^{-3} \right) + o(L^{-2}) \right] \\
+\eea
+Here
+\bea
+L s' &=& - \beta E + \sum_j \frac{\sum_b \epsilon_{bj}e^{-\beta \epsilon_{bj}} }{Z_j} \\
+L s'' &=& \sum_j \left[ - \frac{\sum_b \epsilon_{bj}^2 e^{-\beta \epsilon_{bj}} }{Z_j} + \frac{ \left(\sum_b \epsilon_{bj} e^{-\beta \epsilon_{bj}} \right)^2}{Z^2_j} \right] \\
+Ls^{(3)} & = & \sum_j \left[ \frac{\sum_b \epsilon_{bj}^3 e^{-\beta \epsilon_{bj}} }{Z_j} + 3 \frac{  \left(\sum_b \epsilon_{bj} e^{-\beta \epsilon_{bj}} \right) \left(\sum_b \epsilon^2_{bj} e^{-\beta \epsilon_{bj}} \right)^2}{Z^2_j} \right]
+\eea
+Cumulant expansion
+\bea
+\kap{1} &=& \m{} \\
+\kap{2} &=& \m{2} - \m{}^2 \\
+\kap{3} &=& \m{3} - 3 \m{2} \m{} + 2 \m{}^3 \\
+\kap{4} &=& \m{4} - 4 \m{3} \m{} - 3 \m{2}^2 + 12 \m{2} \m{}^2 - 6 \m{}^4 \\
+\kap{5} &=& \m{5} - 5\m{4}\m{} - 10\m{3}\m{2} + 20\m{3}\m{}^2 + \\
+& & 30\m{2}^2\m{} - 60\m{2}\m{}^3 + 24\m{5} \\
+\kap{6} &=& \m{6} - 6\m{5}\m{} - 15\m{4}\m{2} + 30\m{4}\m{}^2 - 10\m{3}^2 + 120\m{3}\m{2}\m{} \\ 
+& & - 120\m{3}\m{}^3 + 30\m{2}^3 - 270\m{2}^2\m{}^2 + 360\m{2}\m{}^4 - 120\m{}^6
+\eea
+\bea
+\rho(E) & = & \sqrt{\frac{L}{2 \pi |\kap{2}|}} Z e^{\kap{1}} \left[ 1 - \frac{1}{L} \left( \frac{\kap{4} |\kap{2}|^{-2}}{24} + \frac{\kap{3}^2 |\kap{2}|^{-3}}{72}  \right) \right]
+\eea
+
+\section*{Sampling multiple energy dimensions}
+\bea
+\rho(\vec{E}) &=& \sum_s \prod_n \delta \left( E_n - \sum_{bj} \epsilon^n_{bj} s_{bj} \right)  =  (-i)^N  \int \frac{d^N \vec{\beta}}{(2 \pi)^N} e^{-S_{\vec{E}}(\vec{\beta})} 
+\eea
+where all integrals are taken from $- i \infty$ to $i \infty$, and
+\bea
+S_{\vec{E}} (\vec{\beta}) &=& - \sum_n \beta_n E_n - \log Z_{\vec{\beta}} \\ 
+Z_{\vec{\beta}} & = & \prod_j \sum_b e^{- \sum_n \beta_n \epsilon^n_{bj}} 
+\eea
+The saddle-point is found via
+\bea
+\frac{\partial S_{\vec{E}}}{\partial \beta_n} & = & -E_n + \braket{\epsilon_n}_{\vec{\beta}} ~\Rightarrow ~\vec{E} = \braket{\vec{\epsilon}}_{\vec{\beta}}  
+\eea
+and the corresponding Hessian is
+\bea
+\frac{\partial S_{\vec{E}}}{\partial \beta_n \partial \beta_m} & = & - \braket{(\delta \epsilon_n) (\delta \epsilon_m)}_{\beta}.
+\eea
+Given $\vec{E}$ one can solve for $\vec{\beta}$ using Newton's method. I expect this should be fast and robust, especially if $E$ doesn't change all that much, perhaps provably so. With $\vec{\beta}$ in hand, one can carry out the expansion as far as one wants. At second-order, 
+\bea
+\rho(\vec{E}) & \approx & (2 \pi)^{-N/2} \exp \left[ \sum_n \beta _n \braket{\epsilon_n}_{\vec{\beta}} \right] Z_{\vec{\beta}} \det \left( \braket{\vec{\delta \epsilon}~\vec{\delta \epsilon}^T}_{\vec{\beta}} \right)^{-1/2}.
+\eea 
+Should try to carry this out to fourth order. 
+
+\end{document}  

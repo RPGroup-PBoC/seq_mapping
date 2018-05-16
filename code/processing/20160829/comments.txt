@@ -1,0 +1,8 @@
+# Date : 2016-08-28
+# Equipment : MACSQuant (Bjorkman lab)
+# Description : 
+# LacI titration with 5 different operators (O1new010, O1new011, O1new013 and O1new014, 
+# and O1new007) 
+# and 7 different RBS (delta, HG104, RBS1147, RBS446, RBS1027, RBS1 and RBS1L)
+# Comments : 
+# 

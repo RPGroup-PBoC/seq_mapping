@@ -1,0 +1,10 @@
+# Date : 2016-09-07
+# Equipment : MACSQuant (Bjorkman lab)
+# Description : 
+# LacI titration with 5 different operators (O1new007, O1new008, O1new010, O1new011, 
+# O1new013, and 01new014) 
+# and 7 different RBS (delta, HG104, RBS1147, RBS446, RBS1027, RBS1 and RBS1L)
+# Comments : 
+# The flow rates were very low - about 1000/sec with high flow selected.
+# We also had to cancel part way through due to the slow speed, so the next person
+# could use the machine. The last three operators were not completed.

@@ -1,0 +1,8 @@
+# Date : 2017-04-18
+# Equipment : MACSQuant (Bjorkman lab)
+# User: nbellive
+# Description : 
+# LacI titration with mutant 101 operators (Onew102, 103, 104, 105, and 107) 
+# and 7 different RBS (delta, HG104, RBS1147, RBS446, RBS1027, RBS1 and RBS1L)
+# Comments : 
+# Things looks fine. Flow rate was the usual 4000/sec-6000/sec

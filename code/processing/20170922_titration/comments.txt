@@ -1,0 +1,7 @@
+# Date : 2017-09-22
+# Equipment : MACSQuant (Bjorkmann lab)
+# User: sbarnes
+# Description :
+# LacI titration with operators Onew 010, 014 and RBS1027
+# Comments :
+# Things looks fine. Flow rate was good (~5000 events/sec)

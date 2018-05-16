@@ -1,0 +1,12 @@
+# Date : 2016-09-08
+# Equipment : MACSQuant (Bjorkman lab)
+# Description : 
+# LacI titration with 5 different operators (O1new007, O1new008, O1new010, O1new011, 
+# O1new013, and 01new014) 
+# and 7 different RBS (delta, HG104, RBS1147, RBS446, RBS1027, RBS1 and RBS1L)
+# Comments : 
+# Things looks fine. Flow rate was the usual 3000/sec-6000/sec
+# In looking through the histograms, 14 defintely has some issues with the 446 strain.
+# 010 is actualy the old strain set where HG104 and delta are backwards 
+# and the rbs strains are in HG104.
+# Will have to repeat 010, but for now I analyze and assume the rbs strains are okay.

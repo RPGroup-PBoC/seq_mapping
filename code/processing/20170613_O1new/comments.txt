@@ -1,0 +1,9 @@
+# Date : 2017-06-13
+# Equipment : MACSQuant (Bjorkman lab)
+# User: sbarnes
+# Description :
+# LacI titration with operators Onew108, Onew109, Onew110, Onew111
+# and 7 different RBS (delta, HG104, RBS1147, RBS446, RBS1027, RBS1 and RBS1L)
+# Comments :
+# Things looks fine. Flow rate was slow due to minor error in sample 
+# preparation (approx 1000-2000/sec)

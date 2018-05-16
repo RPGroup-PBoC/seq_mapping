@@ -1,0 +1,460 @@
+@article{Siebert2016,
+abstract = {Position weight matrices (PWMs) are the standard model for DNA and RNA regulatory motifs. In PWMs nucleotide probabilities are independent of nucleotides at other positions. Models that account for dependencies need many parameters and are prone to overfitting. We have developed a Bayesian approach for motif discovery using Markov models in which conditional probabilities of order k - 1 act as priors for those of order k This Bayesian Markov model (BaMM) training automatically adapts model complexity to the amount of available data. We also derive an EM algorithm for de-novo discovery of enriched motifs. For transcription factor binding, BaMMs achieve significantly (P = 1/16) higher cross-validated partial AUC than PWMs in 97{\%} of 446 ChIP-seq ENCODE datasets and improve performance by 36{\%} on average. BaMMs also learn complex multipartite motifs, improving predictions of transcription start sites, polyadenylation sites, bacterial pause sites, and RNA binding sites by 26-101{\%}. BaMMs never performed worse than PWMs. These robust improvements argue in favour of generally replacing PWMs by BaMMs.},
+annote = {They name some TF motif databases that I may want to compare against.
+
+This paper is quite technical--may want to pass on to Bill, and revisit once I have learned some more about Markov modeling and Bayesian methods. Presents a Bayesian approach for learning sequence motifs that they claim performs better than basic PWMs.
+
+In regards to Onew, could be a valuable reference for discussing model performance. In particular, it is interesting that their PWMs perform so poorly for weak, multiply-mutated sites (see Figure 4). We will have to determine whether we can make an easy comparison...perhaps by measuring a few O3 mutants? May also want to try looking at log ratios, as they did. Additionally, they claim the ability to accurately predict binding affinities and TSSs, as well as other features that are less relevant to our study.},
+author = {Siebert, Matthias and Soeding, Johannes},
+doi = {10.1093/nar/gkw521},
+file = {:Users/sbarnes/Downloads/gkw521.pdf:pdf},
+issn = {13624962},
+journal = {Nucleic Acids Research},
+mendeley-groups = {Onew},
+number = {13},
+pages = {6055--6069},
+pmid = {27288444},
+title = {{Bayesian Markov models consistently outperform PWMs at predicting motifs in nucleotide sequences}},
+volume = {44},
+year = {2016}
+}
+
+
+@article{Zuo2014,
+abstract = {Knowing the specificity of transcription factors is critical to understanding regulatory networks in cells. The lac repressor-operator system has been studied for many years, but not with high-throughput methods capable of determining specificity comprehensively. Details of its binding interaction and its selection of an asymmetric binding site have been controversial. We employed a new method to accurately determine relative binding affinities to thousands of sequences simultaneously, requiring only sequencing of bound and unbound fractions. An analysis of 2560 different DNA sequence variants, including both base changes and variations in operator length, provides a detailed view of lac repressor sequence specificity. We find that the protein can bind with nearly equal affinities to operators of three different lengths, but the sequence preference changes depending on the length, demonstrating alternative modes of interaction between the protein and DNA. The wild-type operator has an odd length, causing the two monomers to bind in alternative modes, making the asymmetric operator the preferred binding site. We tested two other members of the LacI/GalR protein family and find that neither can bind with high affinity to sites with alternative lengths or shows evidence of alternative binding modes. A further comparison with known and predicted motifs suggests that the lac repressor may be unique in this ability and that this may contribute to its selection.},
+annote = {This is a major paper to cite. Methods differ from ours (e.g. in vitro method and different strategy for making binding energy predictions), but very similar premise in that they predict and measure the binding energies of many lac operator mutants. We need to go beyond this rather than just rehashing it.},
+author = {Zuo, Zheng and Stormo, Gary D.},
+doi = {10.1534/genetics.114.170100},
+file = {:Users/sbarnes/Downloads/1329.full.pdf:pdf},
+issn = {19432631},
+journal = {Genetics},
+keywords = {lac repressor,protein-DNA interaction,specificity by sequencing},
+mendeley-groups = {Onew},
+number = {3},
+pages = {1329--1343},
+pmid = {25209146},
+title = {{High-resolution specificity from DNA sequencing highlights alternative modes of Lac repressor binding}},
+volume = {198},
+year = {2014}
+}
+
+
+@article{Maerkl2007,
+annote = {This paper introduces MITOMI. MITOMI makes it possible to detect transient binding events. As with other studies, they find that predictions don't match up with measured energies as more mutations are made. It appears that they measure the binding energy for single bp mutants and use these measurements coupled with the additivity assumption to predict the remaining values.},
+author = {Maerkl, Sebastian J and Quake, Stephen R},
+file = {:Users/sbarnes/Downloads/233.full.pdf:pdf},
+journal = {Science},
+mendeley-groups = {Onew},
+number = {January},
+pages = {233--238},
+title = {{A systems approach to measuring the binding energy landscapes of transcription factors}},
+volume = {315},
+year = {2007}
+}
+
+
+@article{Boedicker2013,
+abstract = {Transcriptional networks across all domains of life feature a wide range of regulatory architectures. Theoretical models now make clear predictions about how key parameters describing those architectures modulate gene expression, and the ability to construct genetic circuits with tunable parameters enables precise tests of such models. We dissect gene regulation through DNA looping by tuning network parameters such as repressor copy number, DNA binding strengths, and loop length in both thermodynamic models and experiments. Our results help clarify the short-length mechanical properties of DNA.},
+annote = {More on looping.},
+author = {Boedicker, James Q. and Garcia, Hernan G. and Phillips, Rob},
+doi = {10.1103/PhysRevLett.110.018101},
+file = {:Users/sbarnes/Library/Application Support/Mendeley Desktop/Downloaded/Boedicker, Garcia, Phillips - 2013 - Theoretical and experimental dissection of DNA loop-mediated repression.pdf:pdf},
+issn = {00319007},
+journal = {Physical Review Letters},
+mendeley-groups = {Onew},
+number = {1},
+pages = {1--5},
+pmid = {23383841},
+title = {{Theoretical and experimental dissection of DNA loop-mediated repression}},
+volume = {110},
+year = {2013}
+}
+
+
+@article{Gerland2002a,
+author = {Gerland, Ulrich and Hwa, Terence},
+doi = {10.1007/s00239-002-2335-z},
+file = {:Users/sbarnes/Downloads/10.1007{\%}2Fs00239-002-2335-z.pdf:pdf},
+journal = {Journal of Molecular Evolution},
+keywords = {selection model ð error,threshold ð regulatory,transcription regulation ð mutation-},
+mendeley-groups = {Onew},
+pages = {386--400},
+title = {{On the Selection and Evolution of Regulatory DNA Motifs}},
+volume = {55},
+year = {2002}
+}
+
+
+@article{Rogers2015,
+author = {Rogers, Jameson K and Guzman, Christopher D and Taylor, Noah D and Raman, Srivatsan and Anderson, Kelley and Church, George M},
+doi = {10.1093/nar/gkv616},
+file = {:Users/sbarnes/Downloads/gkv616.pdf:pdf},
+journal = {Nucleic Acids Research},
+mendeley-groups = {Onew},
+number = {15},
+pages = {7648--7660},
+title = {{Synthetic biosensors for precise gene control and real-time monitoring of metabolites}},
+volume = {43},
+year = {2015}
+}
+
+
+@article{Rohlhill2017,
+annote = {They use a similar Sort-Seq method, but they use EP-PCR rather than IDT libraries. They start from a small library of constructs and mutate these to obtain constructs with better induction capabilities. They use information footprints and heat maps showing relative enrichment of specific bases. They tackle the identification of both binding sites and mutations of interest.
+
+Our predictive binding matrix, combined with the MWC model, could do a better job of engineering an inducible system.},
+author = {Rohlhill, Julia and Sandoval, Nicholas Richard and Papoutsakis, Eleftherios Terry},
+doi = {10.1021/acssynbio.7b00114},
+file = {:Users/sbarnes/Downloads/RohIhill{\_}acssynbio{\_}2017.pdf:pdf},
+issn = {2161-5063},
+keywords = {biosensor,promoter engineering,sort-seq,transcription factor binding,transcriptional fi ne-tuning},
+mendeley-groups = {Onew},
+title = {{Sort-seq approach to engineering a formaldehyde-inducible promoter for dynamically regulated Escherichia coli growth on methanol}},
+year = {2017}
+}
+
+
+@article{Sengupta2001,
+annote = {They note that the distribution of all possible binding energies for a DNA-TF pair is approximately Gaussian, where they have set the energy scale so that E = 0 is the mean. They note that a factor binds "strongly" to a sequence if E is less than the chemical potential. Their definition of the chemical potential matches ours nicely.
+
+They don't seem to comment on the distributions of binding energies of single mutations.},
+author = {Sengupta, Anirvan M and Djordjevic, Marko and Shraiman, Boris I},
+file = {:Users/sbarnes/Downloads/PNAS-2002-Sengupta-2072-7.pdf:pdf},
+journal = {Proceedings of the National Academy of Sciences},
+mendeley-groups = {Onew},
+title = {{Specificity and robustness in transcription control networks}},
+volume = {2001},
+year = {2001}
+}
+
+
+@article{Peter1986,
+author = {Peter, H and Berg, Otto G},
+file = {:Users/sbarnes/Downloads/PNAS-1986-von Hippel-1608-12.pdf:pdf},
+mendeley-groups = {Onew},
+number = {March},
+pages = {1608--1612},
+title = {{On the specificity of DNA-protein interactions}},
+volume = {83},
+year = {1986}
+}
+
+
+@article{Garcia2012,
+abstract = {A canonical quantitative view of transcriptional regulation holds that the only role of operator sequence is to set the probability of transcription factor binding, with operator occupancy determining the level of gene expression. In this work, we test this idea by characterizing repression in vivo and the binding of RNA polymerase in vitro in experiments where operators of various sequences were placed either upstream or downstream from the promoter in . Escherichia coli. Surprisingly, we find that operators with a weaker binding affinity can yield higher repression levels than stronger operators. Repressor bound to upstream operators modulates promoter escape, and the magnitude of this modulation is not correlated with the repressor-operator binding affinity. This suggests that operator sequences may modulate transcription by altering the nature of the interaction of the bound transcription factor with the transcriptional machinery, implying a new layer of sequence dependence that must be confronted in the quantitative understanding of gene expression.},
+author = {Garcia, Hernan G. and Sanchez, Alvaro and Boedicker, James Q. and Osborne, Melisa and Gelles, Jeff and Kondev, Jane and Phillips, Rob},
+doi = {10.1016/j.celrep.2012.06.004},
+file = {:Users/sbarnes/Downloads/Garcia2012a.pdf:pdf},
+isbn = {2211-1247},
+issn = {22111247},
+journal = {Cell Reports},
+mendeley-groups = {Onew},
+number = {1},
+pages = {150--161},
+pmid = {22840405},
+title = {{Operator sequence alters gene expression independently of transcription factor occupancy in bacteria}},
+volume = {2},
+year = {2012}
+}
+
+
+@article{Weirauch2013,
+author = {Weirauch, Matthew T and Cote, Atina and Norel, Raquel and Annala, Matti and Zhao, Yue and Todd, R and Saez-rodriguez, Julio and Cokelaer, Thomas and Vedenko, Anastasia and Bussemaker, Harmen J and Morris, Quaid D and Martha, L},
+doi = {10.1038/nbt.2486.Evaluation},
+file = {:Users/sbarnes/Downloads/nihms399608.pdf:pdf},
+journal = {Nature Biotechnology},
+mendeley-groups = {Onew},
+number = {2},
+pages = {126--134},
+title = {{Evaluation of methods for modeling transcription-factor sequence specificity}},
+volume = {31},
+year = {2013}
+}
+
+
+@article{Levo2017,
+abstract = {Precise gene expression patterns are established by transcription factor (TFs) binding to regulatory sequences. While these events occur in the context of chromatin, our understanding of how TF-nucleosome interplay affects gene expression is highly limited. Here, we present an assay for high-resolution measurements of both DNA occupancy and gene expression on large-scale libraries of systematically designed regulatory sequences. Our assay reveals occupancy patterns at the single-cell level. It provides an accurate quantification of the fraction of the population bound by a nucleosome and captures distinct, even adjacent, TF binding events. By applying this assay to over 1,500 promoter variants in yeast, we reveal pronounced differences in the dependency of TF activity on chromatin and classify TFs by their differential capacity to alter chromatin and promote expression. We further demonstrate how different regulatory sequences give rise to nucleosome-mediated TF collaborations that quantitatively account for the resulting expression.},
+annote = {In vivo technique. Uses methylation to measure occupancy (unmethylated regions are occupied). Use FACS to make correlating expression measurements. Performed these measurements for many promoters in yeast, hence making it possible to analyze relationship between TF binding and nucleosome binding.},
+author = {Levo, Michal and Avnit-Sagi, Tali and Lotan-Pompan, Maya and Kalma, Yael and Weinberger, Adina and Yakhini, Zohar and Segal, Eran},
+doi = {10.1016/j.molcel.2017.01.007},
+file = {:Users/sbarnes/Downloads/Segal2017MassivelyParallelReporter.pdf:pdf},
+issn = {10974164},
+journal = {Molecular Cell},
+keywords = {DNA binding,chromatin,gene expression,high-throughput sequencing,nucleosome,promoter,quantitative biology,single-cell measurements,transcription factor,transcription regulation},
+mendeley-groups = {Onew},
+number = {4},
+pages = {604--617.e6},
+pmid = {28212748},
+publisher = {Elsevier Inc.},
+title = {{Systematic Investigation of Transcription Factor Activity in the Context of Chromatin Using Massively Parallel Binding and Expression Assays}},
+url = {http://dx.doi.org/10.1016/j.molcel.2017.01.007},
+volume = {65},
+year = {2017}
+}
+
+
+@article{Berg2004,
+abstract = {The regulation of a gene depends on the binding of transcription factors to specific sites located in the regulatory region of the gene. The generation of these binding sites and of cooperativity between them are essential building blocks in the evolution of complex regulatory networks. We study a theoretical model for the sequence evolution of binding sites by point mutations. The approach is based on biophysical models for the binding of transcription factors to DNA. Hence we derive empirically grounded fitness landscapes, which enter a population genetics model including mutations, genetic drift, and selection.},
+archivePrefix = {arXiv},
+arxivId = {arXiv:cond-mat/0301574v2},
+author = {Berg, Johannes and Willmann, Stana and L{\"{a}}ssig, Michael},
+doi = {10.1186/1471-2148-4-42},
+eprint = {0301574v2},
+file = {:Users/sbarnes/Library/Application Support/Mendeley Desktop/Downloaded/Berg, Willmann, L{\"{a}}ssig - 2004 - Adaptive evolution of transcription factor binding sites.pdf:pdf},
+issn = {1471-2148},
+journal = {BMC evolutionary biology},
+mendeley-groups = {Onew},
+pages = {42},
+pmid = {15511291},
+primaryClass = {arXiv:cond-mat},
+title = {{Adaptive evolution of transcription factor binding sites.}},
+volume = {4},
+year = {2004}
+}
+
+
+@article{Lassig2007,
+abstract = {This is an introductory review on how genes interact to produce biological functions. Transcriptional interactions involve the binding of proteins to regulatory DNA. Specific binding sites can be identified by genomic analysis, and these undergo a stochastic evolution process governed by selection, mutations, and genetic drift. We focus on the links between the biophysical function and the evolution of regulatory elements. In particular, we infer fitness landscapes of binding sites from genomic data, leading to a quantitative evolutionary picture of regulation.},
+annote = {Something to look at--how does their definition of chemical potential compare to our definition? Theirs appears like it might more easily be applied to activation.
+
+The analysis in 'Sensitivity and genomic design of regulation' is amazingly spot-on!
+
+The average mutation should have a binding energy cost of about 2.5 kBT. This holds true in our analysis of LacI binding. I wonder if we could use this as an approximate scaling factor for energy matrices instead of having to do the thermodynamic fit.},
+author = {L{\"{a}}ssig, Michael},
+doi = {10.1186/1471-2105-8-S6-S7},
+file = {:Users/sbarnes/Library/Application Support/Mendeley Desktop/Downloaded/L{\"{a}}ssig - 2007 - From biophysics to evolutionary genetics statistical aspects of gene regulation.pdf:pdf},
+isbn = {1471-2105},
+issn = {14712105},
+journal = {BMC bioinformatics},
+mendeley-groups = {Onew,Onew/Binding site evolution},
+pages = {S7},
+pmid = {17903288},
+title = {{From biophysics to evolutionary genetics: statistical aspects of gene regulation.}},
+volume = {8 Suppl 6},
+year = {2007}
+}
+@article{Lynch2015,
+abstract = {Many cellular functions depend on highly specific intermolecular interactions, for example transcription factors and their DNA binding sites, microRNAs and their RNA binding sites, the interfaces between heterodimeric protein molecules, the stems in RNA molecules, and kinases and their response regulators in signal-transduction systems. Despite the need for complementarity between interacting partners, such pairwise systems seem to be capable of high levels of evolutionary divergence, even when subject to strong selection. Such behavior is a consequence of the diminishing advantages of increasing binding affinity between partners, the multiplicity of evolutionary pathways between selectively equivalent alternatives, and the stochastic nature of evolutionary processes. Because mutation pressure toward reduced affinity conflicts with selective pressure for greater interaction, situations can arise in which the expected distribution of the degree of matching between interacting partners is bimodal, even in the face of constant selection. Although biomolecules with larger numbers of interacting partners are subject to increased levels of evolutionary conservation, their more numerous partners need not converge on a single sequence motif or be increasingly constrained in more complex systems. These results suggest that most phylogenetic differences in the sequences of binding interfaces are not the result of adaptive fine tuning but a simple consequence of random genetic drift.},
+author = {Lynch, Michael and Hagner, Kyle},
+doi = {10.1073/pnas.1421641112},
+file = {:Users/sbarnes/Library/Application Support/Mendeley Desktop/Downloaded/Lynch, Hagner - 2015 - Evolutionary meandering of intermolecular interactions along the drift barrier.pdf:pdf},
+isbn = {1091-6490 (Electronic)$\backslash$r0027-8424 (Linking)},
+issn = {1091-6490},
+journal = {Proceedings of the National Academy of Sciences of the United States of America},
+mendeley-groups = {Onew,Onew/Binding site evolution},
+number = {1},
+pages = {E30--8},
+pmid = {25535374},
+title = {{Evolutionary meandering of intermolecular interactions along the drift barrier.}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/25535374{\%}5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=4291652{\&}tool=pmcentrez{\&}rendertype=abstract},
+volume = {112},
+year = {2015}
+}
+
+
+@article{Christensen2011,
+annote = {This paper shows that bacterial one-hybrid can be used to obtain quantitative measurements of protein-DNA binding affinities. They looked at both a randomized 28 bp binding site library, and a library in which only 6 bp (consecutive) of the binding site were randomized. The promoters drive the expression of His3, an enzyme that is required in order for cells to meet their histidine requirements. Growth rate is used to determine how much histidine is being produced.
+
+The relationship between TF binding probability and binding energy is presented through familiar thermodynamic models. They assume that growth rate is directly proportional to the amount of histidine produced. Growth rates are determined by the frequencies of each allele at time t, as determined by sequencing. It isn't clear to me that they actually use growth rates to determine binding energies of bindng sites. It is unclear to me how they actually quantify the binding energies of their data sets. They show a plot of predicted binding energies versus growth rates, but it is not clear whether they also fitted binding energies for each binding site to the growth rate associated with that binding site. It is also unclear where the binding energy predictions come from. I shall have to study this paper more deeply.},
+author = {Christensen, Ryan G and Gupta, Ankit and Zuo, Zheng and Schriefer, Lawrence A and Wolfe, Scot A and Stormo, Gary D},
+doi = {10.1093/nar/gkr239},
+file = {:Users/sbarnes/Downloads/gkr239.pdf:pdf},
+mendeley-groups = {Onew},
+number = {12},
+pages = {1--9},
+title = {{A modified bacterial one-hybrid system yields improved quantitative models of transcription factor specificity}},
+volume = {39},
+year = {2011}
+}
+@article{Friedlander2015,
+abstract = {Gene regulation relies on the specificity of transcription factor (TF) - DNA interactions. In equilibrium, limited specificity may lead to crosstalk: a regulatory state in which a gene is either incorrectly activated due to noncognate TF-DNA interactions or remains erroneously inactive. We present a tractable biophysical model of global crosstalk, where many genes are simultaneously regulated by many TFs. We show that in the simplest regulatory scenario, a lower bound on crosstalk severity can be analytically derived solely from the number of (co)regulated genes and a suitable parameter that describes binding site similarity. Estimates show that crosstalk could present a significant challenge for organisms with low-specificity TFs, such as metazoans, unless they use appropriate regulation schemes. Strong cooperativity substantially decreases crosstalk, while joint regulation by activators and repressors, surprisingly, does not; moreover, certain microscopic details about promoter architecture emerge as globally important determinants of crosstalk strength. Our results suggest that crosstalk imposes a new type of global constraint on the functioning and evolution of regulatory networks, which is qualitatively distinct from the known constraints acting at the level of individual gene regulatory elements.},
+archivePrefix = {arXiv},
+arxivId = {1506.06925},
+author = {Friedlander, Tamar and Prizak, Roshan and Guet, Călin C. and Barton, Nicholas H. and Tka{\v{c}}ik, Ga{\v{s}}per},
+doi = {10.1038/ncomms12307},
+eprint = {1506.06925},
+file = {:Users/sbarnes/Downloads/ncomms12307.pdf:pdf},
+issn = {2041-1723},
+journal = {ArXiv},
+mendeley-groups = {Onew/Binding site evolution},
+pages = {1--65},
+title = {{Intrinsic limits to gene regulation by global crosstalk}},
+year = {2015}
+}
+
+@article{Gerland2002b,
+abstract = {We study theoretical "design principles" for transcription factor (TF)-DNA interaction in bacteria, focusing particularly on the statistical interaction of the TFs with the genomic background (i.e., the genome without the target sites). We introduce and motivate the concept of programmability, i.e., the ability to set the threshold concentration for TF binding over a wide range merely by mutating the binding sequence of a target site. This functional demand, together with physical constraints arising from the thermodynamics and kinetics of TF-DNA interaction, leads us to a narrow range of "optimal" interaction parameters. We find that this parameter set agrees well with experimental data for the interaction parameters of a few exemplary prokaryotic TFs, which indicates that TF-DNA interaction is indeed programmable. We suggest further experiments to test whether this is a general feature for a large class of TFs.},
+archivePrefix = {arXiv},
+arxivId = {physics/0112083},
+author = {Gerland, Ulrich and Moroz, J David and Hwa, Terence},
+doi = {10.1073/pnas.192693599},
+eprint = {0112083},
+file = {:Users/sbarnes/Library/Application Support/Mendeley Desktop/Downloaded/Gerland, Moroz, Hwa - 2002 - Physical constraints and functional characteristics of transcription factor-DNA interaction.pdf:pdf},
+isbn = {0027-8424 (Print)$\backslash$r0027-8424 (Linking)},
+issn = {00278424},
+journal = {Proceedings of the National Academy of Sciences of the United States of America},
+mendeley-groups = {Onew,Onew/Binding site evolution},
+number = {19},
+pages = {12015--12020},
+pmid = {12218191},
+primaryClass = {physics},
+title = {{Physical constraints and functional characteristics of transcription factor-DNA interaction.}},
+volume = {99},
+year = {2002}
+}
+@article{Inukai2017,
+abstract = {Sequence-specific transcription factors (TFs) regulate gene expression by binding to cis-regulatory elements in promoter and enhancer DNA. While studies of TF???DNA binding have focused on TFs??? intrinsic preferences for primary nucleotide sequence motifs, recent studies have elucidated additional layers of complexity that modulate TF???DNA binding. In this review, we discuss technological developments for identifying TF binding preferences and highlight recent discoveries that elaborate how TF interactions, local DNA structure, and genomic features influence TF???DNA binding. We highlight novel approaches for characterizing functional binding site motifs that promise to inform our understanding of how TF binding controls gene expression and ultimately contributes to phenotype.},
+author = {Inukai, Sachi and Kock, Kian Hong and Bulyk, Martha L.},
+doi = {10.1016/j.gde.2017.02.007},
+file = {:Users/sbarnes/Downloads/1-s2.0-S0959437X1730028X-main.pdf:pdf},
+issn = {18790380},
+journal = {Current Opinion in Genetics and Development},
+mendeley-groups = {Onew},
+pages = {110--119},
+pmid = {28359978},
+publisher = {Elsevier Ltd},
+title = {{Transcription factor???DNA binding: beyond binding site motifs}},
+url = {http://dx.doi.org/10.1016/j.gde.2017.02.007},
+volume = {43},
+year = {2017}
+}
+@article{Jolma2013,
+annote = {This paper uses HT-SELEX and ChIP.
+
+They primarily use DNA binding domains (DBDs) but also use some full-length transcription factors. Looked at hundreds of TFs.
+
+Made PWMs from enriched sequences after SELEX.
+
+The amount of data gathered here was sufficient to compare a linear additive model against higher-order models. ({\textgreater}7000 sequences per TF) Adjacent nucleotides appear to have the greatest deviations from the linear model (as I would expect).
+
+This study identifies specificities, but not affinities.},
+author = {Jolma, Arttu and Yan, Jian and Whitington, Thomas and Toivonen, Jarkko and Nitta, Kazuhiro R and Rastas, Pasi and Morgunova, Ekaterina and Enge, Martin and Taipale, Mikko and Wei, Gonghong and Palin, Kimmo and Vaquerizas, Juan M and Vincentelli, Renaud and Luscombe, Nicholas M and Hughes, Timothy R and Lemaire, Patrick and Ukkonen, Esko and Kivioja, Teemu},
+doi = {10.1016/j.cell.2012.12.009},
+file = {:Users/sbarnes/Downloads/PIIS0092867412014961.pdf:pdf},
+issn = {0092-8674},
+journal = {Cell},
+mendeley-groups = {Onew},
+number = {1-2},
+pages = {327--339},
+publisher = {Elsevier Inc.},
+title = {{DNA-Binding Specificities of Human Transcription Factors}},
+url = {http://dx.doi.org/10.1016/j.cell.2012.12.009},
+volume = {152},
+year = {2013}
+}
+@article{Kinney2010,
+abstract = {Cells use protein-DNA and protein-protein interactions to regulate transcription. A biophysical understanding of this process has, however, been limited by the lack of methods for quantitatively characterizing the interactions that occur at specific promoters and enhancers in living cells. Here we show how such biophysical information can be revealed by a simple experiment in which a library of partially mutated regulatory sequences are partitioned according to their in vivo transcriptional activities and then sequenced en masse. Computational analysis of the sequence data produced by this experiment can provide precise quantitative information about how the regulatory proteins at a specific arrangement of binding sites work together to regulate transcription. This ability to reliably extract precise information about regulatory biophysics in the face of experimental noise is made possible by a recently identified relationship between likelihood and mutual information. Applying our experimental and computational techniques to the Escherichia coli lac promoter, we demonstrate the ability to identify regulatory protein binding sites de novo, determine the sequence-dependent binding energy of the proteins that bind these sites, and, importantly, measure the in vivo interaction energy between RNA polymerase and a DNA-bound transcription factor. Our approach provides a generally applicable method for characterizing the biophysical basis of transcriptional regulation by a specified regulatory sequence. The principles of our method can also be applied to a wide range of other problems in molecular biology.},
+author = {Kinney, J. B. and Murugan, A. and Callan, C. G. and Cox, E. C.},
+doi = {10.1073/pnas.1004290107},
+file = {:Users/sbarnes/Downloads/PNAS-2010-Kinney-9158-63.pdf:pdf},
+isbn = {1091-6490 (Electronic)$\backslash$r0027-8424 (Linking)},
+issn = {0027-8424},
+journal = {Proceedings of the National Academy of Sciences},
+mendeley-groups = {Onew},
+number = {20},
+pages = {9158--9163},
+pmid = {20439748},
+title = {{Using deep sequencing to characterize the biophysical mechanism of a transcriptional regulatory sequence}},
+url = {http://www.pnas.org/cgi/doi/10.1073/pnas.1004290107},
+volume = {107},
+year = {2010}
+}
+@article{Noyes2008,
+author = {Noyes, Marcus B and Christensen, Ryan G and Wakabayashi, Atsuya and Stormo, Gary D and Brodsky, Michael H},
+doi = {10.1016/j.cell.2008.05.023},
+file = {:Users/sbarnes/Downloads/PIIS009286740800682X.pdf:pdf},
+mendeley-groups = {Onew},
+pages = {1277--1289},
+title = {{Resource Analysis of Homeodomain Specificities Allows the Family-wide Prediction of Preferred Recognition Sites}},
+year = {2008}
+}
+@article{Nutiu2011,
+annote = {This is an admirable technique that combines sequencing with binding experiments in an Illumina sequence. First sequencing proceeds as normal, and then the DNA in the sequencer is used for binding experiments with the TF of interest, so that affinities can be directly mapped to sequence.},
+author = {Nutiu, Razvan and Friedman, Robin C and Luo, Shujun and Khrebtukova, Irina and Silva, David and Li, Robin and Zhang, Lu and Schroth, Gary P and Burge, Christopher B},
+doi = {10.1038/nbt.1882},
+file = {:Users/sbarnes/Downloads/nbt.1882.pdf:pdf},
+issn = {1087-0156},
+journal = {Nature Biotechnology},
+mendeley-groups = {Onew},
+number = {7},
+pages = {659--664},
+publisher = {Nature Publishing Group},
+title = {{Direct measurement of DNA affinity landscapes on a high-throughput sequencing instrument}},
+url = {http://dx.doi.org/10.1038/nbt.1882},
+volume = {29},
+year = {2011}
+}
+
+@article{Kinney2014,
+author = {Kinney, Justin and Atwal, Gurinder S. },
+journal = {Neural Computation},
+pages = {637–653},
+title = {{Parametric Inference in the Large Data Limit Using Maximally Informative Models.}},
+volume = {26},
+number = {4},
+year = {2014}
+}
+@article{Song1997,
+author = {Song, Sukgil and Park, Chankyu },
+journal = {Journal of Bacteriology},
+pages = {7025–7032},
+title = {{Organization and regulation of the D-xylose operons in Escherichia coli K-12: XylR acts as a transcriptional activator.}},
+volume = {179},
+number = {22},
+year = {1997}
+}
+@article{Garcia2011,
+author = {Garcia, Hernan G. and Phillips, Rob},
+journal = {PNAS},
+pages = {12173–12178},
+title = {{Quantitative dissection of the simple repression input-output function.}},
+volume = {108},
+number = {29},
+year = {2011}
+}
+@article{Levinkarp2013,
+author = {Levin-Karp, Ayelet and Barenholz, Uri and Bareia, Tasneem and Dayagi, Michal and Zelcbuch, Lior and Antonovsky, Niv and Noor, Elad and Milo, Ron},
+journal = {ACS Synthetic Biology},
+pages = {327–336},
+title = {{Quantifying Translational Coupling in E. coli Synthetic Operons Using RBS Modulation and Fluorescent Reporters}},
+volume = {2},
+number = {6},
+year = {2013}
+}
+@article{Tian2015,
+author = {Tian, Tian and Salis, Howard},
+journal = {Nucleic Acids Research},
+pages = {7137–7151},
+title = {{A predictive biophysical model of translational coupling to coordinate and control protein expression in bacterial operons.}},
+volume = {43},
+number = {14},
+year = {2015}
+}
+@article{Sawitzke2007,
+author = {Sawitzke, J. A. and Thomason, L. C. and Costantino, N. and Bubunenko, M. and Datta, S. and Court, D. L. },
+journal = {Science Direct},
+pages = {171-199},
+title = {{Recombineering: In Vivo Genetic Engineering in E. coli, S. enterica, and Beyond.}},
+volume = {421},
+year = {2010}
+}
+
+@article{Kinney2007,
+author = {Kinney, Justin B. and Tka\v{c}ik, Ga\v{s}per and Callan, Curtis G.},
+journal = {PNAS},
+number = {2},
+pages = {501–506},
+title = {{Precise physical models of protein-DNA interaction from high-throughput data.}},
+volume = {104},
+year = {2007}
+}
+
+@article{Mustonen2008,
+author = {Mustonen, Ville and Kinney, Justin and Callan, Curtis G. and Lassig, Michael},
+journal = {PNAS},
+number = {34},
+pages = {12376–12381},
+title = {{Energy-dependent fitness: A quantitative model for the evolution of yeast transcription factor binding sites.}},
+volume = {105},
+year = {2008}
+}
