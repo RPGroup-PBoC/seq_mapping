@@ -1394,7 +1394,7 @@ def set_plotting_style():
           'xtick.major' : 13,
           'xtick.labelsize': 'large',
           'ytick.labelsize': 13,
-          'font.family': 'Lucida Sans Unicode',
+          'font.family': 'Arial',
           'grid.linestyle': ':',
           'grid.linewidth': 1.5,
           'grid.color': '#ffffff',
