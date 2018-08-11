@@ -1388,12 +1388,12 @@ def set_plotting_style():
     `mwc_induction_utils.set_plotting_style() in the preamble.
     """
     rc = {'lines.linewidth': 2,
-          'axes.labelsize': 18,
-          'axes.titlesize': 20,
+          'axes.labelsize': 12,
+          'axes.titlesize': 12,
           'axes.facecolor': '#E3DCD0',
-          'xtick.major' : 13,
-          'xtick.labelsize': 'large',
-          'ytick.labelsize': 13,
+          'xtick.major' : 10,
+          'xtick.labelsize': 10,
+          'ytick.labelsize': 10,
           'font.family': 'Arial',
           'grid.linestyle': ':',
           'grid.linewidth': 1.5,
@@ -1401,7 +1401,7 @@ def set_plotting_style():
           'mathtext.fontset': 'stixsans',
           'mathtext.sf': 'sans',
           'legend.frameon': True,
-          'legend.fontsize': 13}
+          'legend.fontsize': 10}
     plt.rc('text.latex', preamble=r'\usepackage{sfmath}')
     plt.rc('mathtext', fontset='stixsans', sf='sans')
     sns.set_style('darkgrid', rc=rc)
